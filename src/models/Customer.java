@@ -10,6 +10,11 @@ public class Customer extends Person{
     public Customer(String firstName, String lastName, String address, String gender, LocalDate birthday, int orderId) {
         super(firstName, lastName, address, gender, birthday);
         setOrderId(orderId);
+        setOrders(new ArrayList<>());
+    }
+
+    public void setOrders(ArrayList<String> orders){
+        this.orders = orders;
     }
 
     public int getOrderId() {
@@ -28,7 +33,7 @@ public class Customer extends Person{
     }
 
     public void addOrders(String items) {
-        if (items.matches("Food[0-9][H]"))
+        if (items.matches("cake" + "Milk"))
             orders.add(items);
         else
             throw new IllegalArgumentException("Not contains the items");

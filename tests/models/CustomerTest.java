@@ -31,9 +31,9 @@ class CustomerTest {
 
     @Test
     void addOrder() {
-        customer.addOrders("Food 100H");
+        customer.addOrders("cake" + "Milk");
         ArrayList<String> expResult =  new ArrayList<>();
-        expResult.add("Food 100H");
+        expResult.add("cake" + "Milk");
         assertEquals(expResult,customer.getOrders());
     }
 
