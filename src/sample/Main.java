@@ -5,7 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+/*Purpose: Main class extended the application which loads the scene
+ *name: Harman Kaur
+ * date:2021-04-04
+ * time: 2:pm
+ */
 public class Main extends Application {
 
     @Override

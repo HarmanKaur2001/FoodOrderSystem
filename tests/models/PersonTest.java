@@ -6,6 +6,11 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
+/*Purpose: The main class is created which contains the information about the person class in which all the methods are tested
+ *name: Harman Kaur
+ * date:2021-04-04
+ * time: 2:pm
+ */
 
 class PersonTest {
 
@@ -75,30 +80,41 @@ class PersonTest {
     }
 
     @Test
-    void setInvalidAddressEmpty() {
+    void setInvalidAddressEmpty()
+    {
         assertThrows(IllegalArgumentException.class, ()->
                 person.setAddress("    "));
     }
 
     @Test
-    void setBirthday() {
+    void setBirthday()
+    {
         person.setBirthday(LocalDate.of(2001,12,14));
         assertEquals(LocalDate.of(2001,12,14),person.getBirthday());
     }
 
     @Test
-    void setInvalidBirthdayFuture() {
+    void setInvalidBirthdayFuture()
+    {
         assertThrows(IllegalArgumentException.class, ()->
                 person.setBirthday(LocalDate.of(2030,01,01)));
     }
 
-
-
     @Test
-    void getGender() {
+    void getGender()
+    {
         person.setGender("Female");
         assertEquals("Female",person.getGender());
     }//test for the gender
+
+    @Test
+    void getGenderInvalid()
+    {
+        person.setGender("Male");
+        assertEquals("Male",person.getGender());
+    }//test for the gender
+
+
 
 
 }

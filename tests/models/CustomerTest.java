@@ -8,6 +8,12 @@ import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
+/*Purpose: The customer class tests the methods of customer class
+ *name: Harman Kaur
+ * date:2021-04-04
+ * time: 2:pm
+ */
+
 
 class CustomerTest {
 

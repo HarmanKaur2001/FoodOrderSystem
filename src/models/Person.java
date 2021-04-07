@@ -12,6 +12,7 @@ public class Person {
         setFirstName(firstName);
         setLastName(lastName);
         setAddress(address);
+        setGender(gender);
         setBirthday(birthday);
     }
 
@@ -42,14 +43,16 @@ public class Person {
 
     }
 
+    //the last name is validated by putting some validation here
     public void setLastName(String lastName) {
-//        lastName = lastName.substring(0,1).toUpperCase() + lastName.substring(1);
+        lastName = lastName.substring(0,1).toUpperCase() + lastName.substring(1);
         if (lastName.matches("[A-Z][a-z]*"))
             this.lastName = lastName;
         else
             throw new IllegalArgumentException("must be alphabetic & not contain spaces or -");
     }
 
+    //address is validated here
     public void setAddress(String address) {
         address = address.trim();
         if (address.length()>=5 && address.length()<=100)
@@ -58,19 +61,34 @@ public class Person {
             throw new IllegalArgumentException("Address must be 5 to 100 characters");
     }
 
+    //the birthday is ensure that is in past not the date is written in future
     public void setBirthday(LocalDate birthday) {
         if (birthday.isAfter(LocalDate.now()))
             throw new IllegalArgumentException("birthday cannot be in the future");
         this.birthday = birthday;
     }
 
-    public String getGender() {
-        return gender;
-    }
 
+    //the gender of the person is placed here
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    public String getGender() {
+        if( gender == "f"||gender =="F"||gender =="female"||gender
+                =="Female"||gender =="FEMALE")
+        {
+            System.out.println("A female" );
+        }
+        if( gender == "m"||gender =="M"||gender =="male"||gender
+                =="Male"||gender =="MALE")
+        {
+            System.out.println("A male.");
+        }
+        return gender;
+    }
+
+
 
     public String getFirstName() {
         return firstName;
