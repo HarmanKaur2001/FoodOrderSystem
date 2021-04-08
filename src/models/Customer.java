@@ -12,7 +12,7 @@ public class Customer extends Person{
     private int orderId;
     private ArrayList<String> orders;
 
-    //the customer use most of variables from the person class but orderr id and orders are added
+    //the customer use most of variables from the person class but order id and orders are added
     public Customer(String firstName, String lastName, String address, String gender, LocalDate birthday, int orderId) {
         super(firstName, lastName, address, gender, birthday);
         setOrderId(orderId);
@@ -47,7 +47,5 @@ public class Customer extends Person{
             orders.add(items);
         else
             throw new IllegalArgumentException("Not contains the items");
-
-
     }
 }
