@@ -17,46 +17,110 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
 
-    Customer customer;
 
-    @BeforeEach
-    void setUp(){
-        customer = new Customer("Harman","Kaur","39 SandWay drive",
-                "Female", LocalDate.of(2001,12,14),12345);
-    }
+    /*Purpose: The main class is created which contains the information about the person class in which all the methods are tested
+     *name: Harman Kaur
+     * date:2021-04-04
+     * time: 2:pm
+     */
 
-    @Test
-    void getOrderId() {
-        assertEquals(12345, customer.getOrderId());
-    }
+        Customer customer;
+        @BeforeEach
+        void setUp(){
+            customer = new Customer("Harman","Kaur","39 SandWay drive",
+                    "Female", LocalDate.of(2001,12,14));
+        }
 
-    @Test
-    void setOrderId() {
-        assertEquals(12345, customer.getOrderId());
-    }
+        @Test
+        void getAge() {
+            assertEquals(19,customer.getAge());
+        }
 
-    @Test
-    void addOrder() {
-        customer.addOrders("cake" + "Milk");
-        ArrayList<String> expResult =  new ArrayList<>();
-        expResult.add("cake" + "Milk");
-        assertEquals(expResult,customer.getOrders());
-    }
+        @Test
+        void setFirstName() {
+            customer.setFirstName("Harman");
+            assertEquals("Harman",customer.getFirstName());
+        }
 
-    @Test
-    void getOrders() {
+        @Test
+        void setFirstNameInvalidEmpty() {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setFirstName(""));
+        }
 
-    }
+        @Test
+        void setFirstNameInvalidNumbersEnd() {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setFirstName("Harman12345"));
+        }
 
-    @Test
-    void addOrderInvalid() {
-        assertThrows(IllegalArgumentException.class, ()->
-                customer.addOrders("Deserts"));
-    }
+        @Test
+        void setFirstNameInvalidNumbers() {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setFirstName("67HH77"));
+        }
 
-    @Test
-    void addOrderInvalid2() {
-        assertThrows(IllegalArgumentException.class, ()->
-                customer.addOrders("Cold drinks"));
-    }
+        @Test
+        void setLastName() {
+            customer.setLastName("Kaur");
+            assertEquals("Kaur",customer.getLastName());
+        }
+
+        @Test
+        void setlastNameInvalidEmpty() {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setFirstName(""));
+        }
+
+        @Test
+        void setLastNameInvalidNumbersEnd() {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setFirstName("Harman123"));
+        }
+
+        @Test
+        void setLastNameInvalidNumbers() {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setFirstName("22ff"));
+        }
+
+        @Test
+        void setAddress() { customer.setAddress("39 Sandway Drive, Brampton, ON");
+            assertEquals("39 Sandway Drive, Brampton, ON", customer.getAddress());
+        }
+
+        @Test
+        void setInvalidAddressEmpty()
+        {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setAddress("    "));
+        }
+
+        @Test
+        void setBirthday()
+        {
+            customer.setBirthday(LocalDate.of(2001,12,14));
+            assertEquals(LocalDate.of(2001,12,14),customer.getBirthday());
+        }
+
+        @Test
+        void setInvalidBirthdayFuture()
+        {
+            assertThrows(IllegalArgumentException.class, ()->
+                    customer.setBirthday(LocalDate.of(2030,01,01)));
+        }
+
+        @Test
+        void getGender()
+        {
+            customer.setGender("Female");
+            assertEquals("Female",customer.getGender());
+        }//test for the gender
+
+        @Test
+        void getGenderInvalid()
+        {
+            customer.setGender("Male");
+            assertEquals("Male",customer.getGender());
+        }//test for the gender
 }
