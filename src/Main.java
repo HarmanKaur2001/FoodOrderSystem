@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,8 +11,8 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("views/PersonView.fxml"));
         primaryStage.setTitle("Food Order");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
@@ -25,3 +23,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+
