@@ -3,7 +3,7 @@ package models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Orders extends Customer {
+public class Orders {
     private int orderId;
     private ArrayList<String> orders;
     private LocalDate orderDate;
@@ -12,8 +12,7 @@ public class Orders extends Customer {
 
 
 
-    public Orders(String firstName, String lastName, String address, String gender, LocalDate birthday) {
-        super(firstName, lastName, address, gender, birthday);
+    public Orders(int orderId,ArrayList<String> orders, LocalDate orderDate,double price);{
         setOrderId(orderId);
         setOrders(new ArrayList<>());
         setOrderDate(orderDate);
@@ -21,6 +20,13 @@ public class Orders extends Customer {
     }
     public void setOrders(ArrayList<String> orders){
         this.orders = orders;
+    }
+    public void addOrder(Orders newOrder)
+    {
+        if (Orders.size()<40)
+            Orders.add(newOrder);
+        else
+            throw new IllegalArgumentException("Orders is full");
     }
 
     //getter for the order id

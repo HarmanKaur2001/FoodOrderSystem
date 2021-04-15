@@ -13,16 +13,16 @@
       </Label>
       <VBox layoutX="26.0" layoutY="132.0" prefHeight="180.0" prefWidth="246.0">
          <children>
-            <Label text="Customers" />
-            <ListView prefHeight="120.0" prefWidth="200.0" />
-            <Button mnemonicParsing="false" text="CreateCustomers" />
+            <Label fx:id="customerLabel" text="Customers" />
+            <ListView fx:id="customersListView" prefHeight="120.0" prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#createNewCustomersButton" text="Create Customers" />
          </children>
       </VBox>
       <VBox layoutX="284.0" layoutY="132.0" prefHeight="180.0" prefWidth="246.0">
          <children>
-            <Label text="Orders" />
-            <ListView prefHeight="120.0" prefWidth="200.0" />
-            <Button mnemonicParsing="false" text="Craete Orders" />
+            <Label fx:id="ordersLabel" text="Orders" />
+            <ListView fx:id="ordersListView" prefHeight="120.0" prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#createNewOrdersButton" text="Create Orders" />
          </children>
       </VBox>
    </children>

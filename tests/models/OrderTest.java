@@ -1,5 +1,6 @@
 package models;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -20,18 +21,15 @@ public class OrderTest {
                 "Female",LocalDate.of(2001,12,14));
     }
 
-    @Test
-    void setOrderId() {
-        assertEquals(12345, order.getOrderId());
-    }
 
     @Test
     void addOrder() {
         order.addOrders("cake" + "Milk");
         ArrayList<String> expResult =  new ArrayList<>();
         expResult.add("cake" + "Milk");
-        assertEquals(expResult,order.getOrders());
+        Assertions.assertEquals(expResult,order.getOrders());
     }
+
 
 
     @Test
@@ -56,6 +54,6 @@ public class OrderTest {
     void setInvalidBirthdayFuture()
     {
         assertThrows(IllegalArgumentException.class, ()->
-                order.setOrderDate(LocalDate.of(2030,01,01)));
+                order.setOrderDate(LocalDate.of(2030, 1,01)));
     }
 }
