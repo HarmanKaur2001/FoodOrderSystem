@@ -17,8 +17,9 @@ public class OrderTest {
 
     @BeforeEach
     void setUp(){
+        ArrayList<String> orderSet = new ArrayList<>();
         order =  new Orders("Harman","Kaur","39 SandWay drive",
-                "Female",LocalDate.of(2001,12,14));
+                "Female",LocalDate.of(2001,12,14),"32eF",orderSet,LocalDate.of(2021,04,16),22.44);
     }
 
 

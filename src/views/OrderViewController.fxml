@@ -33,5 +33,6 @@
             <Button fx:id="changeToDashboard" mnemonicParsing="false" text="Back to DashBoard" />
          </children>
       </VBox>
+      <Label text="Label" />
    </children>
 </AnchorPane>

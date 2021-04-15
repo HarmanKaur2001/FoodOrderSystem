@@ -15,7 +15,8 @@ public class Orders extends Customer {
 
 
 
-    public Orders(String firstName, String lastName, String address, String gender, LocalDate birthDay){
+    public Orders(String firstName, String lastName, String address, String gender, LocalDate birthDay, String orderId, ArrayList<String> orders,
+                  LocalDate orderDate, double price){
         super(firstName, lastName,address,gender,birthDay);
         setOrderId(orderId);
         setOrderDate(orderDate);

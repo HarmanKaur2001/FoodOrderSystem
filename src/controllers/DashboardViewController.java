@@ -57,6 +57,19 @@ public class DashboardViewController {
         stage.show();
     }
 
-    public void createNewOrdersButton(ActionEvent actionEvent) {
+    @FXML
+    private void createNewOrdersButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("../views/OrderViewController.fxml"));
+        Scene scene = new Scene(root);
+
+        //get the stage from the event that was passed in
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.setTitle("Food Ordering - Create New Customer");
+        stage.setTitle("Food Ordering - Create New Order");
+        stage.show();
     }
+
+
 }
