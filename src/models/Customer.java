@@ -1,8 +1,8 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.Period;
-import java.util.ArrayList;
 
 /*Purpose: The customer uses the person class where the customer can order and they have their order id
 *name: Harman Kaur

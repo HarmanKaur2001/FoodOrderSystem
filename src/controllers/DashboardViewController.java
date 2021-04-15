@@ -37,7 +37,7 @@ public class DashboardViewController {
 
     @FXML
     private void createNewOrder(ActionEvent event) throws IOException {
-        SceneChanger.changeScenes(event,"../views/OrderViewController.fxnl","Here you can order");
+        SceneChanger.changeScenes(event,"../views/OrderViewController.fxml","Here you can order");
     }
 
 

@@ -1,49 +1,53 @@
 package models;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+import controllers.CustomerViewController;
 
-public class Orders {
-    private int orderId;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Orders extends Customer {
+    private String orderId;
     private ArrayList<String> orders;
     private LocalDate orderDate;
     private double price;
 
 
 
-
-    public Orders(int orderId,ArrayList<String> orders, LocalDate orderDate,double price);{
+    public Orders(String firstName, String lastName, String address, String gender, LocalDate birthDay){
+        super(firstName, lastName,address,gender,birthDay);
         setOrderId(orderId);
-        setOrders(new ArrayList<>());
         setOrderDate(orderDate);
+        setOrders(orders);
         setPrice(price);
     }
-    public void setOrders(ArrayList<String> orders){
-        this.orders = orders;
-    }
-    public void addOrder(Orders newOrder)
-    {
-        if (Orders.size()<40)
-            Orders.add(newOrder);
-        else
-            throw new IllegalArgumentException("Orders is full");
-    }
-
-    //getter for the order id
-    public int getOrderId() {
-        return orderId;
-    }
-
-    //set order id which is greater than or equal or 5
-    public void setOrderId(int orderId) {
-        if(orderId >=5)
-            this.orderId = orderId;
-        else
-            throw new IllegalArgumentException("order id must be greater or equals than 5");
+    public void setOrders(ArrayList<String> orders) {
+        ArrayList<String> orderSet = new ArrayList<String>();
+        orderSet.addAll(Arrays.asList("Drinks", "Snacks", "Deserts", "Maincourse"));
+        if (orders != null) {
+            this.orders = orders;
+        }
+        else{
+            throw new IllegalArgumentException("enter any order");
+        }
     }
 
     public ArrayList<String> getOrders() {
         return orders;
+    }
+
+    //getter for the order id
+    public String getOrderId() {
+        return orderId;
+    }
+
+    //set order id which is greater than or equal or 5
+    public void setOrderId(String orderId) {
+        if(orderId != null)
+            this.orderId = orderId;
+        else
+            throw new IllegalArgumentException("order id must be greater or equals than 5");
     }
 
     //order will be added as arraylist
@@ -69,13 +73,13 @@ public class Orders {
 
     public void setPrice(double price) {
         if(price != 0)
-            {
-                this.price = price;
-            }
-            else
-            {
-                throw new IllegalArgumentException("Amount Cannot be zero, select any item from the list");
-            }
+        {
+            this.price = price;
         }
+        else
+        {
+            throw new IllegalArgumentException("Amount Cannot be zero, select any item from the list");
+        }
+    }
 }
 
