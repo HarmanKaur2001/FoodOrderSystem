@@ -1,6 +1,7 @@
 package models;
 
 import controllers.CustomerViewController;
+import javafx.collections.ObservableList;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -23,6 +24,7 @@ public class Orders extends Customer {
         setOrders(orders);
         setPrice(price);
     }
+
     public void setOrders(ArrayList<String> orders) {
         ArrayList<String> orderSet = new ArrayList<String>();
         orderSet.addAll(Arrays.asList("Drinks", "Snacks", "Deserts", "Maincourse"));

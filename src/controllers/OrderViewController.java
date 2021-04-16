@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import models.Customer;
 import models.Orders;
@@ -32,6 +33,9 @@ public class OrderViewController implements Initializable {
 
     @FXML
     private TextField priceTextField;
+    @FXML
+    private TextArea textArea;
+    private Orders order;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -44,27 +48,16 @@ public class OrderViewController implements Initializable {
         ordersComboBox.getItems().add(orderSet);
         orderDatePicker.getValue();
         priceTextField.setText(Integer.toString((int) orderView.getPrice()));
-        //DButilities.addOrder(order);
+        DButilities.addOrders(order);
+    }
+
+    @FXML
+    protected void submitButton(ActionEvent event) {
+        textArea.setText("Thank you for yor order!!!");
     }
 
     @FXML
     private void changeToDashboard(ActionEvent event) throws IOException {
         SceneChanger.changeScenes(event, "../views/DashboardViewController.fxml","Food Ordering");
-    }
-    @FXML
-    public void submitButton(ActionEvent event) {
-        try {
-            Orders orders = new Orders(orderIdTextField.getText(),
-                    ordersComboBox.getItems().add(orders),
-                    orderDatePicker.getValue(),
-                    priceTextField.getText());
-
-            DButilities.addCustomer(orders);
-
-        }catch(IllegalArgumentException e)
-        {
-            e.printStackTrace();
-        }
-
     }
 }

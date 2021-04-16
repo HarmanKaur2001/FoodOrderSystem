@@ -1,5 +1,7 @@
 package models;
 
+import javafx.collections.ObservableList;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Period;
@@ -20,6 +22,7 @@ public class Customer{
         setGender(gender);
         setBirthday(birthday);
     }
+
 
     /**
      * This returns the Person's age in years based on their birthday and the current date

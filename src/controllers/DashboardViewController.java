@@ -80,6 +80,9 @@ public class DashboardViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         for(Customer customer: DButilities.getAllCustomers()){
             customersListView.getItems().add(customer);
+            for(Orders orders: DButilities.getAllOrders()){
+                ordersListView.getItems().add(orders);
+            }
         }
     }
 }
