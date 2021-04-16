@@ -52,10 +52,9 @@ public class OrderTest {
     }
 
     @Test
-    void setInvalidBirthdayFuture()
-    {
-        assertThrows(IllegalArgumentException.class, ()->
-                order.setOrderDate(LocalDate.of(2030, 1,01)));
+    void setPrice(){
+        order.setPrice(22.44);
+        assertEquals(22.44,order.getPrice());
     }
 
 }
