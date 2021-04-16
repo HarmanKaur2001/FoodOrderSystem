@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="483.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardViewController">
+   <children>
+      <Label layoutX="188.0" layoutY="38.0" text="Hey!! Foodies">
+         <font>
+            <Font name="System Italic" size="29.0" />
+         </font>
+      </Label>
+      <VBox layoutX="26.0" layoutY="132.0" prefHeight="180.0" prefWidth="246.0">
+         <children>
+            <Label fx:id="customerLabel" text="Customers" />
+            <ListView fx:id="customersListView" prefHeight="120.0" prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#createNewCustomersButton" text="Create Customers" />
+         </children>
+      </VBox>
+      <VBox layoutX="284.0" layoutY="132.0" prefHeight="180.0" prefWidth="246.0">
+         <children>
+            <Label fx:id="ordersLabel" text="Orders" />
+            <ListView fx:id="ordersListView" prefHeight="120.0" prefWidth="200.0" />
+            <Button mnemonicParsing="false" onAction="#createNewOrdersButton" text="Create Orders" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
