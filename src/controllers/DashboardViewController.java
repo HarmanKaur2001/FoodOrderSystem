@@ -3,6 +3,7 @@ package controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,11 +12,14 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import models.Customer;
 import models.Orders;
+import utilities.DButilities;
 import utilities.SceneChanger;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class DashboardViewController {
+public class DashboardViewController implements Initializable {
 
     @FXML
     private Label customersLabel;
@@ -72,4 +76,10 @@ public class DashboardViewController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        for(Customer customer: DButilities.getAllCustomers()){
+            customersListView.getItems().add(customer);
+        }
+    }
 }
